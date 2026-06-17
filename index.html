@@ -1,131 +1,333 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Mausoleum of Khoja Ahmed Yasawi</title>
+<title>Mausoleum of Khoja Ahmet Yassawi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
 <style>
+:root{
+  --dark:#170f0a;
+  --brown:#4a2d17;
+  --cream:#f8edd8;
+  --light:#fffaf0;
+  --gold:#d4af37;
+  --blue:#0f4c81;
+  --turquoise:#1e9bb5;
+  --text:#2c2c2c;
+}
+
+*{box-sizing:border-box;}
+
 body{
-margin:0;
-font-family:Georgia, serif;
-background:#fbf8f3;
-color:#2c2c2c;
-line-height:1.8;
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background:#f8edd8;
+  color:var(--text);
+  line-height:1.75;
 }
-header{
-background:linear-gradient(135deg,#0f4c81,#1e9bb5,#d4af37);
-color:white;
-text-align:center;
-padding:100px 20px;
-}
-header h1{
-font-size:52px;
-margin-bottom:10px;
-}
-header p{
-font-size:20px;
-}
+
 nav{
-background:rgba(255,255,255,0.96);
-padding:20px;
-text-align:center;
-border-bottom:2px solid #d4af37;
-position:sticky;
-top:0;
-z-index:999;
-backdrop-filter:blur(10px);
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(23,15,10,0.86);
+  backdrop-filter:blur(12px);
+  padding:16px 20px;
+  text-align:center;
+  border-bottom:1px solid rgba(212,175,55,0.55);
 }
+
 nav a{
-text-decoration:none;
-color:#0f4c81;
-font-weight:bold;
-margin:0 12px;
-text-transform:uppercase;
-font-size:13px;
-letter-spacing:1px;
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-weight:700;
 }
-nav a:hover{
-color:#d4af37;
+
+nav a:hover{color:var(--gold);}
+
+.hero{
+  min-height:100vh;
+  background:
+    linear-gradient(rgba(23,15,10,0.55), rgba(23,15,10,0.82)),
+    url("images/image1.png") center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:120px 20px 80px;
+  color:white;
 }
+
+.hero-box{
+  max-width:900px;
+  padding:60px 45px;
+  background:rgba(23,15,10,0.48);
+  border:1px solid rgba(212,175,55,0.7);
+  box-shadow:0 25px 80px rgba(0,0,0,0.45);
+}
+
+.hero h1{
+  font-family:'Cormorant Garamond', serif;
+  font-size:78px;
+  line-height:0.95;
+  margin:0 0 25px;
+  color:#fff7df;
+}
+
+.hero p{
+  font-size:20px;
+  color:#f7ead0;
+}
+
+.btn{
+  display:inline-block;
+  margin:12px 8px 0;
+  padding:13px 24px;
+  background:var(--gold);
+  color:#170f0a;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid #f7ead0;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  font-size:13px;
+}
+
+.btn.secondary{
+  background:transparent;
+  color:white;
+}
+
+.btn:hover{
+  background:white;
+  color:#170f0a;
+}
+
 main{
-max-width:1100px;
-margin:40px auto;
-background:white;
-padding:40px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  max-width:1150px;
+  margin:0 auto;
+  padding:70px 24px;
 }
-.hero-image{
-width:100%;
-border-radius:6px;
-margin-bottom:30px;
+
+.section{
+  background:var(--light);
+  padding:45px;
+  margin-bottom:38px;
+  border:1px solid rgba(212,175,55,0.55);
+  box-shadow:0 12px 35px rgba(0,0,0,0.10);
 }
+
 h2{
-color:#0f4c81;
-font-size:34px;
-border-bottom:2px solid #d4af37;
-padding-bottom:10px;
+  font-family:'Cormorant Garamond', serif;
+  color:var(--brown);
+  font-size:46px;
+  margin:0 0 20px;
+  border-bottom:1px solid var(--gold);
+  padding-bottom:12px;
 }
+
+h3{
+  font-family:'Cormorant Garamond', serif;
+  color:var(--blue);
+  font-size:28px;
+  margin-bottom:10px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:22px;
+}
+
+.card{
+  background:#fff4df;
+  padding:24px;
+  border-left:5px solid var(--gold);
+  min-height:150px;
+}
+
+.card a{
+  color:var(--blue);
+  font-weight:700;
+  text-decoration:none;
+}
+
+.card a:hover{color:var(--gold);}
+
+.image-row{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px;
+  margin-top:24px;
+}
+
+.image-row img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+  border:1px solid var(--gold);
+  box-shadow:0 12px 30px rgba(0,0,0,0.15);
+}
+
+table{
+  width:100%;
+  border-collapse:collapse;
+  background:white;
+  margin-top:20px;
+}
+
+th,td{
+  border:1px solid #d4af37;
+  padding:14px;
+  text-align:left;
+  vertical-align:top;
+}
+
+th{
+  background:#0f4c81;
+  color:white;
+}
+
 footer{
-margin-top:50px;
-background:#0f4c81;
-color:white;
-text-align:center;
-padding:30px;
+  background:#170f0a;
+  color:white;
+  text-align:center;
+  padding:40px 20px;
+  border-top:3px solid var(--gold);
 }
-ul li{
-margin-bottom:10px;
+
+@media(max-width:760px){
+  nav{position:static;}
+  nav a{
+    display:inline-block;
+    margin:5px 7px;
+  }
+  .hero h1{font-size:48px;}
+  .section{padding:28px;}
 }
 </style>
 </head>
+
 <body>
-<header>
-<h1>Mausoleum of Khoja Ahmed Yasawi</h1>
-<p>
-Semantic Web, RDF and SPARQL Analysis of Islamic Cultural Heritage
-</p>
-<p>
-Gulnara Kozmet & Sevara Abdulazizova
-</p>
-</header>
+
 <nav>
-<a href="index.html">Home</a>
-<a href="topic.html">Topic</a>
-<a href="methodology.html">Methodology</a>
-<a href="rdf.html">RDF Triples</a>
-<a href="sparql.html">SPARQL</a>
-<a href="gaps.html">Identifying Gaps</a>
-<a href="prompts.html">LLM Prompts</a>
-<a href="challenges.html">Challenges</a>
-<a href="conclusion.html">Conclusion</a>
+  <a href="index.html">Home</a>
+  <a href="topic.html">Topic</a>
+  <a href="methodology.html">Methodology</a>
+  <a href="sparql.html">SPARQL</a>
+  <a href="gaps.html">Gaps</a>
+  <a href="prompts.html">LLM Prompts</a>
+  <a href="rdf.html">RDF</a>
+  <a href="challenges.html">Challenges</a>
+  <a href="conclusion.html">Conclusion</a>
 </nav>
+
+<header class="hero">
+  <div class="hero-box">
+    <h1>Mausoleum of Khoja Ahmet Yassawi</h1>
+    <p>RDF, SPARQL and Knowledge Graph Analysis of Islamic Cultural Heritage</p>
+    <p><strong>Gulnara Kozmet & Sevara Abdulazizova</strong></p>
+    <a class="btn" href="topic.html">Explore Project</a>
+    <a class="btn secondary" href="https://github.com/sevavivi/ke4h-khoja-yasawi" target="_blank">View GitHub</a>
+  </div>
+</header>
+
 <main>
-<img src="images/IMG_8089.jpeg" class="hero-image">
-<h2>Introduction</h2>
-<p>
-This project explores how Semantic Web technologies can be used to represent and enrich cultural heritage information related to the Mausoleum of Khoja Ahmed Yasawi, one of the most important Islamic monuments in Central Asia.
-</p>
-<p>
-Using Wikidata, RDF triples, SPARQL queries, and Large Language Models, we investigated existing knowledge gaps and proposed new semantic descriptions that better represent the religious, historical, and cultural significance of the monument.
-</p>
-<h2>Research Objectives</h2>
-<ul>
-<li>Analyse existing Wikidata information.</li>
-<li>Identify semantic gaps.</li>
-<li>Create RDF triples for enrichment.</li>
-<li>Use SPARQL for data exploration.</li>
-<li>Evaluate LLM support in Knowledge Engineering.</li>
-</ul>
-<h2>Tools Used</h2>
-<ul>
-<li>Wikidata</li>
-<li>Wikidata Query Service</li>
-<li>SPARQL</li>
-<li>ChatGPT</li>
-<li>Gemini</li>
-<li>GitHub Pages</li>
-</ul>
+
+<section class="section">
+  <h2>Project Overview</h2>
+  <p>
+    This project explores how RDF, SPARQL, and knowledge graph technologies can be used to represent and enrich cultural heritage information related to the Mausoleum of Khoja Ahmet Yassawi, one of the most important Islamic monuments in Central Asia.
+  </p>
+  <p>
+    Using Wikidata, RDF triples, SPARQL queries, and Large Language Models, we investigated existing knowledge gaps and proposed new semantic descriptions that better represent the religious, historical, and cultural significance of the monument.
+  </p>
+</section>
+
+<section class="section">
+  <h2>Research Objectives</h2>
+  <div class="grid">
+    <div class="card">Analyse existing Wikidata information about the mausoleum.</div>
+    <div class="card">Identify semantic gaps in the current knowledge graph representation.</div>
+    <div class="card">Use SPARQL queries to explore structured data.</div>
+    <div class="card">Compare ChatGPT and Gemini through three prompting techniques.</div>
+    <div class="card">Propose RDF triples for Wikidata enrichment.</div>
+    <div class="card">Publish the results as a GitHub Pages academic website.</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Visual Context</h2>
+  <div class="image-row">
+    <img src="images/IMG_8098.jpeg" alt="Mausoleum detail">
+    <img src="images/IMG_8082.jpeg" alt="Methodology visual">
+  </div>
+</section>
+
+<section class="section">
+  <h2>Website Sections</h2>
+  <div class="grid">
+    <div class="card"><h3>Topic</h3><p>Context, research question, and motivation.</p><a href="topic.html">Open Topic</a></div>
+    <div class="card"><h3>Methodology</h3><p>Research steps and tools used.</p><a href="methodology.html">Open Methodology</a></div>
+    <div class="card"><h3>SPARQL</h3><p>Queries and results from Wikidata.</p><a href="sparql.html">Open SPARQL</a></div>
+    <div class="card"><h3>Gaps</h3><p>Missing cultural and religious knowledge.</p><a href="gaps.html">Open Gaps</a></div>
+    <div class="card"><h3>LLM Prompts</h3><p>ChatGPT and Gemini comparison.</p><a href="prompts.html">Open LLM Prompts</a></div>
+    <div class="card"><h3>RDF Triples</h3><p>Final proposed RDF enrichment.</p><a href="rdf.html">Open RDF Triples</a></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>LLM Comparison</h2>
+  <p>
+    ChatGPT and Gemini were evaluated using Zero-shot, Few-shot, and Chain-of-Thought prompting.
+  </p>
+  <table>
+    <tr>
+      <th>Prompt Type</th>
+      <th>ChatGPT</th>
+      <th>Gemini</th>
+      <th>Assessment</th>
+    </tr>
+    <tr>
+      <td>Zero-shot</td>
+      <td>Focused and concise</td>
+      <td>Detailed and contextual</td>
+      <td>Both relevant</td>
+    </tr>
+    <tr>
+      <td>Few-shot</td>
+      <td>Structured output</td>
+      <td>Strong adaptation</td>
+      <td>Improved consistency</td>
+    </tr>
+    <tr>
+      <td>Chain-of-Thought</td>
+      <td>Most aligned</td>
+      <td>Most exploratory</td>
+      <td>Best overall result</td>
+    </tr>
+  </table>
+
+  <p>
+    <a class="btn" href="https://liveunibo-my.sharepoint.com/:x:/g/personal/sevara_abdulazizova_studio_unibo_it/IQAvce5I0pJ1R7a_eZSGPOm2Ad68NTYWqlaEer0eWgfFtm4?e=0bYS9I" target="_blank">
+      Open LLM Comparison Spreadsheet
+    </a>
+  </p>
+</section>
+
 </main>
+
 <footer>
-Knowledge Engineering for the Humanities • University of Bologna • 2026
+  Knowledge Engineering for the Humanities • University of Bologna • 2026
 </footer>
+
 </body>
 </html>
