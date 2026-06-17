@@ -86,6 +86,7 @@ LIMIT 20</pre>
 <div class="card">
 <strong>Result:</strong> The query returned information such as country, location, architectural style, material, UNESCO World Heritage status, and historical identifiers.
 </div>
+<img src="images/query1.png" alt="Query 1 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
 
 <section>
@@ -110,6 +111,7 @@ LIMIT 15</pre>
 <div class="card">
 <strong>Result:</strong> The query showed structured data such as Commons category, World Heritage Site ID, World Heritage criteria, Wikikids ID, and other external identifiers.
 </div>
+<img src="images/query2.png" alt="Query 2 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
 
 <section>
@@ -131,6 +133,7 @@ WHERE {
 <div class="card">
 <strong>Result:</strong> The query returned the mausoleum, but the architect field was empty. This shows that the architect information is not clearly represented.
 </div>
+<img src="images/query3.png" alt="Query 3 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
 
 <section>
@@ -150,6 +153,7 @@ WHERE {
 <div class="card">
 <strong>Result:</strong> The query returned World Heritage Site and Q4343708, confirming that Wikidata represents the monument as a heritage site.
 </div>
+<img src="images/query4.png" alt="Query 4 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
 
 <section>
@@ -173,6 +177,7 @@ LIMIT 50</pre>
 <div class="card">
 <strong>Result:</strong> The query returned 32 results, including country, image, instance of, commissioned by Timur, location, architectural style, material, coordinates, heritage designation, and World Heritage criteria.
 </div>
+<img src="images/query5.png" alt="Query 5 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
 
 <section>
