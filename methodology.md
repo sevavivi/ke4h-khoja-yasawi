@@ -103,7 +103,12 @@ Finally, we proposed RDF triples that could enrich the Wikidata representation w
 </p>
 </div>
 </section>
-
+<div class="card">
+<h3>Tools Used</h3>
+<p>
+Wikidata, Wikidata Query Service (SPARQL), ChatGPT, Gemini, and GitHub Pages.
+</p>
+</div>
 </main>
 
 <footer>
