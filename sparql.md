@@ -2,7 +2,9 @@
 layout: default
 title: SPARQL Queries
 ---
+[Home](index.html) | [Topic](topic.html) | [Methodology](methodology.html) | [RDF Triples](rdf.html) | [SPARQL](sparql.html) | [Gaps](gaps.html) | [LLM Prompts](prompts.html) | [Challenges](challenges.html) | [Conclusion](conclusion.html)
 
+---
 # SPARQL Queries
 
 This section presents the SPARQL queries used to investigate the Wikidata representation of the Mausoleum of Khoja Ahmed Yasawi and identify missing information.
