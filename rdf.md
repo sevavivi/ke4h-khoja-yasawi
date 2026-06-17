@@ -2,6 +2,9 @@
 layout: default
 title: RDF Triples
 ---
+[Home](index.html) | [Topic](topic.html) | [Methodology](methodology.html) | [RDF Triples](rdf.html) | [SPARQL](sparql.html) | [Gaps](gaps.html) | [LLM Prompts](prompts.html) | [Challenges](challenges.html) | [Conclusion](conclusion.html)
+
+---
 <img src="images/IMG_8097.jpeg" width="100%">
 # RDF Triples
 
