@@ -2,7 +2,7 @@
 layout: default
 title: Challenges
 ---
-
+<img src="images/IMG_8082.jpeg" width="100%">
 # Challenges
 
 During the development of this project, we encountered several technical and conceptual challenges.
