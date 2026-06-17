@@ -1,506 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mausoleum of Khoja Ahmed Yasawi | KE4H Project</title>
-
+  <meta charset="UTF-8">
+  <title>Mausoleum of Khoja Ahmed Yasawi</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@300;400;600;700&display=swap');
-
-    * { box-sizing: border-box; scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #15120d;
-      color: #f4ead8;
-      line-height: 1.6;
+      font-family: Georgia, serif;
+      background: #fbf8f3;
+      color: #2c2c2c;
     }
 
     header {
-      min-height: 100vh;
-      background:
-        linear-gradient(rgba(21,18,13,.65), rgba(21,18,13,.85)),
-        url("https://commons.wikimedia.org/wiki/Special:FilePath/Mausoleum%20of%20Khoja%20Ahmed%20Yasawi%20%287519819652%29.jpg");
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      align-items: center;
-      padding: 70px 8%;
+      background: linear-gradient(135deg, #0f4c81, #1e9bb5, #d4af37);
+      color: white;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    header h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
     }
 
     nav {
-      position: fixed;
+      text-align: center;
+      padding: 18px;
+      background: white;
+      border-bottom: 1px solid #d4af37;
+      position: sticky;
       top: 0;
-      width: 100%;
-      background: rgba(21,18,13,.9);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-      padding: 14px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid rgba(218,180,120,.25);
-    }
-
-    nav h3 {
-      margin: 0;
-      font-family: 'Cinzel', serif;
-      color: #d9b56f;
+      z-index: 10;
     }
 
     nav a {
-      color: #f4ead8;
+      color: #0f4c81;
       text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
+      margin: 0 10px;
+      font-weight: bold;
     }
 
-    nav a:hover { color: #d9b56f; }
-
-    .hero {
-      max-width: 820px;
+    nav a:hover {
+      color: #d4af37;
     }
 
-    .hero h1 {
-      font-family: 'Cinzel', serif;
-      font-size: 68px;
-      line-height: 1.05;
-      margin: 0 0 20px;
-      color: #f6e7c8;
-    }
-
-    .hero p {
-      font-size: 20px;
-      max-width: 720px;
-      color: #e3d5bd;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 24px;
-      border: 1px solid #d9b56f;
-      color: #d9b56f;
-      text-decoration: none;
-      border-radius: 30px;
-    }
-
-    .btn:hover {
-      background: #d9b56f;
-      color: #15120d;
-    }
-
-    section {
-      padding: 85px 8%;
-      border-bottom: 1px solid rgba(218,180,120,.18);
+    main {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+      background: white;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
 
     h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 42px;
-      color: #d9b56f;
-      margin-bottom: 28px;
-    }
-
-    h3 {
-      color: #f2d493;
-      margin-top: 28px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: rgba(255,255,255,.055);
-      border: 1px solid rgba(218,180,120,.25);
-      border-radius: 22px;
-      padding: 26px;
-      transition: .25s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      border-color: #d9b56f;
-      background: rgba(255,255,255,.09);
-    }
-
-    .card a {
-      color: #d9b56f;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .photo-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      border: 1px solid rgba(218,180,120,.25);
-      height: 300px;
-    }
-
-    .photo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: .4s;
-    }
-
-    .photo-card:hover img {
-      transform: scale(1.08);
-      filter: brightness(.6);
-    }
-
-    .photo-card span {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      right: 20px;
-      font-family: 'Cinzel', serif;
-      font-size: 22px;
-      color: white;
-      text-shadow: 0 2px 8px black;
-    }
-
-    pre {
-      background: #0c0a07;
-      color: #f4dca8;
-      border: 1px solid rgba(218,180,120,.3);
-      padding: 20px;
-      border-radius: 16px;
-      overflow-x: auto;
-      font-size: 14px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 25px;
-      background: rgba(255,255,255,.05);
-      border-radius: 18px;
-      overflow: hidden;
-    }
-
-    th, td {
-      border: 1px solid rgba(218,180,120,.2);
-      padding: 16px;
-      vertical-align: top;
-    }
-
-    th {
-      background: rgba(217,181,111,.18);
-      color: #f5d58f;
-    }
-
-    .quote-box {
-      font-family: 'Cinzel', serif;
-      font-size: 26px;
-      color: #f2d493;
-      border-left: 4px solid #d9b56f;
-      padding-left: 22px;
-      margin: 35px 0;
+      color: #0f4c81;
+      font-size: 34px;
     }
 
     footer {
       text-align: center;
-      padding: 45px;
-      color: #c5b89f;
-    }
-
-    @media (max-width: 800px) {
-      nav { flex-direction: column; align-items: flex-start; }
-      nav div { margin-top: 10px; }
-      nav a { margin: 0 10px 0 0; }
-      .hero h1 { font-size: 42px; }
+      padding: 35px;
+      color: white;
+      background: #0f4c81;
+      margin-top: 60px;
     }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <h3>KE4H Project</h3>
-  <div>
-    <a href="#topic">Topic</a>
-    <a href="#sparql">SPARQL</a>
-    <a href="#gaps">Gaps</a>
-    <a href="#llm">LLMs</a>
-    <a href="#rdf">RDF</a>
-    <a href="#conclusion">Conclusion</a>
-  </div>
-</nav>
-
 <header>
-  <div class="hero">
-    <h1>Mausoleum of Khoja Ahmed Yasawi</h1>
-    <p>
-      Enriching Wikidata through SPARQL exploration, LLM prompting,
-      and RDF triples for cultural heritage knowledge representation.
-    </p>
-    <p><strong>Team:</strong> Gulnara Kozmet & Abdulazizova Sevara</p>
-    <a class="btn" href="#topic">Explore the Project</a>
-  </div>
+  <h1>Mausoleum of Khoja Ahmed Yasawi</h1>
+  <p>Enriching Wikidata with SPARQL and LLMs</p>
+  <p>Gulnara Kozmet & Sevara Abdulazizova</p>
 </header>
 
-<section id="topic">
-  <h2>1. Topic</h2>
-  <p>
-    This project focuses on the <strong>Mausoleum of Khoja Ahmed Yasawi</strong>,
-    a UNESCO World Heritage Site located in Turkistan, Kazakhstan.
-    The goal is to explore how its Wikidata representation can be enriched
-    with religious, cultural, and pilgrimage-related knowledge.
-  </p>
+<nav>
+  ⭐ <a href="index.html">Home</a>
+  ⭐ <a href="topic.html">Topic</a>
+  ⭐ <a href="methodology.html">Methodology</a>
+  ⭐ <a href="sparql.html">SPARQL & Results</a>
+  ⭐ <a href="gaps.html">Identifying Gaps</a>
+  ⭐ <a href="prompts.html">LLM Prompts</a>
+  ⭐ <a href="rdf.html">RDF Triples</a>
+  ⭐ <a href="challenges.html">Challenges</a>
+  ⭐ <a href="conclusion.html">Conclusion</a>
+</nav>
 
-  <div class="photo-grid">
-    <a class="photo-card" href="https://www.wikidata.org/wiki/Q46069" target="_blank">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mausoleum%20of%20Khoja%20Ahmed%20Yasawi%20%287519819652%29.jpg">
-      <span>Wikidata Entry</span>
-    </a>
-
-    <a class="photo-card" href="https://en.wikipedia.org/wiki/Mausoleum_of_Khoja_Ahmed_Yasawi" target="_blank">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mausoleum%20of%20Khoja%20Ahmed%20Yasawi.jpg">
-      <span>Wikipedia Article</span>
-    </a>
-
-    <a class="photo-card" href="https://whc.unesco.org/en/list/1103/" target="_blank">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ahmed%20Yasawi%20Mausoleum.jpg">
-      <span>UNESCO Page</span>
-    </a>
-  </div>
-
-  <div class="quote-box">
-    Research Question: How can Wikidata for the Mausoleum of Khoja Ahmed Yasawi
-    be enriched through RDF triples and knowledge graph modeling?
-  </div>
-</section>
-
-<section id="sparql">
-  <h2>2. SPARQL Exploration</h2>
-  <p>
-    We used Wikidata Query Service to explore the current RDF description
-    of the Mausoleum and identify missing semantic relations.
-  </p>
-
-  <h3>Query 1 — Existing Wikidata Properties</h3>
-  <pre><code>SELECT DISTINCT ?propertyLabel ?valueLabel
-WHERE {
-  wd:Q46069 ?prop ?value .
-  ?property wikibase:directClaim ?prop .
-
-  SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en" .
-  }
-}
-ORDER BY ?propertyLabel
-LIMIT 200</code></pre>
-
-  <h3>Query 2 — Checking Yasawiyya Connection</h3>
-  <pre><code>SELECT ?propertyLabel ?valueLabel
-WHERE {
-  wd:Q46069 ?prop ?value .
-  ?property wikibase:directClaim ?prop .
-
-  FILTER(CONTAINS(LCASE(STR(?valueLabel)), "yas"))
-
-  SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en" .
-  }
-}</code></pre>
-
-  <h3>Query 3 — Checking Pilgrimage Function</h3>
-  <pre><code>SELECT ?propertyLabel ?valueLabel
-WHERE {
-  wd:Q46069 ?prop ?value .
-  ?property wikibase:directClaim ?prop .
-
-  FILTER(CONTAINS(LCASE(STR(?valueLabel)), "pilgrim"))
-
-  SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en" .
-  }
-}</code></pre>
-
-  <h3>Query 4 — UNION Query for Related Names</h3>
-  <pre><code>SELECT DISTINCT ?item ?itemLabel
-WHERE {
-  {
-    ?item rdfs:label ?itemLabel .
-    FILTER(REGEX(?itemLabel, "Yasawi", "i"))
-  }
-  UNION
-  {
-    ?item rdfs:label ?itemLabel .
-    FILTER(REGEX(?itemLabel, "Arystan|Arslan Bab", "i"))
-  }
-
-  SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en" .
-  }
-}
-LIMIT 50</code></pre>
-
-  <h3>Query 5 — OPTIONAL Query</h3>
-  <pre><code>SELECT DISTINCT ?item ?itemLabel ?locationLabel
-WHERE {
-  ?item wdt:P31 wd:Q41176 .
-
-  OPTIONAL {
-    ?item wdt:P276 ?location .
-  }
-
-  SERVICE wikibase:label {
-    bd:serviceParam wikibase:language "en" .
-  }
-}
-LIMIT 50</code></pre>
-</section>
-
-<section id="gaps">
-  <h2>3. Knowledge Gaps</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>Gap 1</h3>
-      <p><strong>Missing connection with the Yasawiyya Sufi Order.</strong></p>
-      <p>The Wikidata entry does not explicitly connect the mausoleum to the Yasawiyya tradition.</p>
-    </div>
-
-    <div class="card">
-      <h3>Gap 2</h3>
-      <p><strong>Missing representation as a pilgrimage site.</strong></p>
-      <p>The spiritual function of the mausoleum as a pilgrimage destination is underrepresented.</p>
-    </div>
-
-    <div class="card">
-      <h3>Gap 3</h3>
-      <p><strong>Missing spiritual and religious significance.</strong></p>
-      <p>The entry contains basic historical data, but lacks deeper religious context.</p>
-    </div>
-
-    <div class="card">
-      <h3>Gap 4</h3>
-      <p><strong>Missing links with related religious heritage sites.</strong></p>
-      <p>The mausoleum is not clearly connected to sites such as Arystan Bab Mausoleum.</p>
-    </div>
-  </div>
-</section>
-
-<section id="llm">
-  <h2>4. LLM Evaluation</h2>
-  <p>
-    We compared <strong>ChatGPT</strong> and <strong>Gemini</strong> using three prompting strategies:
-    Zero-shot, Few-shot, and Chain-of-Thought.
-  </p>
-
-  <table>
-    <tr>
-      <th>Prompt Type</th>
-      <th>ChatGPT</th>
-      <th>Gemini</th>
-      <th>Human Assessment</th>
-    </tr>
-    <tr>
-      <td><strong>Zero-shot</strong></td>
-      <td>Generated clear triples about Yasawiyya, pilgrimage, Sufism, and heritage sites.</td>
-      <td>Generated similar triples with more detailed explanations.</td>
-      <td>Both models were relevant. ChatGPT was clearer; Gemini was richer.</td>
-    </tr>
-    <tr>
-      <td><strong>Few-shot</strong></td>
-      <td>Followed the example structure closely and stayed focused.</td>
-      <td>Adapted strongly to the example and created more complex semantic relations.</td>
-      <td>Few-shot improved both models. Gemini benefited more from the example.</td>
-    </tr>
-    <tr>
-      <td><strong>Chain-of-Thought</strong></td>
-      <td>Identified the same four gaps found through SPARQL exploration.</td>
-      <td>Expanded the analysis with additional ideas such as Taykazan and architectural influence.</td>
-      <td>ChatGPT stayed aligned with the project; Gemini was more exploratory.</td>
-    </tr>
-  </table>
-</section>
-
-<section id="rdf">
-  <h2>5. RDF Enrichment</h2>
-  <p>
-    Based on SPARQL exploration and LLM outputs, we propose the following RDF triples:
-  </p>
-
-  <pre><code>:Mausoleum_of_Khoja_Ahmed_Yasawi :associatedWith :Yasawiyya_Sufi_Order .
-
-:Mausoleum_of_Khoja_Ahmed_Yasawi :hasFunction :Pilgrimage_Site .
-
-:Mausoleum_of_Khoja_Ahmed_Yasawi :associatedWith :Sufism .
-
-:Mausoleum_of_Khoja_Ahmed_Yasawi :relatedHeritageSite :Arystan_Bab_Mausoleum .</code></pre>
+<main>
+  <h2>Introduction</h2>
 
   <p>
-    These triples enrich the knowledge graph by representing religious traditions,
-    pilgrimage practices, spiritual significance, and connections with other heritage sites.
+    This project was developed as part of the Knowledge Engineering for the Humanities course.
+    It explores how SPARQL queries and Large Language Models can be used to enrich the Wikidata
+    representation of the Mausoleum of Khoja Ahmed Yasawi.
   </p>
-</section>
 
-<section id="challenges">
-  <h2>6. Challenges</h2>
-
-  <div class="grid">
-    <div class="card">
-      <h3>SPARQL Complexity</h3>
-      <p>We had to learn how to use FILTER, REGEX, OPTIONAL, UNION, LIMIT, and ORDER BY.</p>
-    </div>
-
-    <div class="card">
-      <h3>Identifying Real Gaps</h3>
-      <p>Some information existed in Wikipedia but was not represented as structured data in Wikidata.</p>
-    </div>
-
-    <div class="card">
-      <h3>LLM Limitations</h3>
-      <p>Gemini sometimes generated broader suggestions that moved beyond our research focus.</p>
-    </div>
-
-    <div class="card">
-      <h3>Human Evaluation</h3>
-      <p>We manually compared outputs to select the most useful RDF triples.</p>
-    </div>
-  </div>
-</section>
-
-<section id="conclusion">
-  <h2>7. Conclusion</h2>
   <p>
-    This project demonstrated how Large Language Models can support knowledge graph enrichment
-    for cultural heritage.
-  </p>
-  <p>
-    By analyzing the Wikidata entry of the Mausoleum of Khoja Ahmed Yasawi, we identified
-    several gaps related to religious significance, pilgrimage practices, and connections
-    with other heritage sites.
-  </p>
-  <p>
-    ChatGPT and Gemini were evaluated through Zero-shot, Few-shot, and Chain-of-Thought prompting.
-    ChatGPT produced more focused outputs, while Gemini generated broader and more exploratory suggestions.
-  </p>
-  <p>
-    The proposed RDF triples improve the semantic richness of the knowledge graph by adding
-    cultural, religious, and pilgrimage-related information.
+    Our goal is to identify missing semantic information and propose new RDF triples that represent
+    the religious, cultural, and pilgrimage-related significance of the mausoleum.
   </p>
 
-  <a class="btn" href="https://www.wikidata.org/wiki/Q46069" target="_blank">View Wikidata Entry</a>
-</section>
+  <h2>Tools Used</h2>
+
+  <ul>
+    <li>Wikidata</li>
+    <li>Wikidata Query Service</li>
+    <li>SPARQL</li>
+    <li>ChatGPT</li>
+    <li>Gemini</li>
+    <li>GitHub Pages</li>
+  </ul>
+</main>
 
 <footer>
-  KE4H Project — Mausoleum of Khoja Ahmed Yasawi — GitHub Pages
+  KE4H Project — Mausoleum of Khoja Ahmed Yasawi
 </footer>
 
 </body>
