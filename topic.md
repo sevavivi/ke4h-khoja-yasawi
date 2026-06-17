@@ -2,7 +2,9 @@
 layout: default
 title: Topic
 ---
+<img src="images/IMG_8089.jpeg" width="100%">
 
+# Mausoleum of Khoja Ahmed Yasawi
 # Topic
 
 Our project focuses on the **Mausoleum of Khoja Ahmed Yasawi**, a UNESCO World Heritage Site located in Turkistan, Kazakhstan.
