@@ -2,7 +2,9 @@
 layout: default
 title: Conclusion
 ---
+[Home](index.html) | [Topic](topic.html) | [Methodology](methodology.html) | [RDF Triples](rdf.html) | [SPARQL](sparql.html) | [Gaps](gaps.html) | [LLM Prompts](prompts.html) | [Challenges](challenges.html) | [Conclusion](conclusion.html)
 
+---
 # Conclusion
 
 This project explored how semantic web technologies and Large Language Models can support knowledge graph enrichment for cultural heritage.
