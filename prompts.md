@@ -2,7 +2,9 @@
 layout: default
 title: Using LLMs
 ---
+[Home](index.html) | [Topic](topic.html) | [Methodology](methodology.html) | [RDF Triples](rdf.html) | [SPARQL](sparql.html) | [Gaps](gaps.html) | [LLM Prompts](prompts.html) | [Challenges](challenges.html) | [Conclusion](conclusion.html)
 
+---
 # Using Large Language Models
 
 After identifying the knowledge gaps, we used Large Language Models (LLMs) to help generate RDF triples that could enrich the Wikidata representation of the Mausoleum of Khoja Ahmed Yasawi.
