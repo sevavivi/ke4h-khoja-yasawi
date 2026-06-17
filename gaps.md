@@ -2,7 +2,9 @@
 layout: default
 title: Identifying Gaps
 ---
+[Home](index.html) | [Topic](topic.html) | [Methodology](methodology.html) | [RDF Triples](rdf.html) | [SPARQL](sparql.html) | [Gaps](gaps.html) | [LLM Prompts](prompts.html) | [Challenges](challenges.html) | [Conclusion](conclusion.html)
 
+---
 # Identifying Gaps
 
 After exploring the Wikidata representation of the Mausoleum of Khoja Ahmed Yasawi through SPARQL queries, we identified several important gaps in the knowledge graph.
