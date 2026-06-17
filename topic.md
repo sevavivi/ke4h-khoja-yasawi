@@ -2,6 +2,8 @@
 layout: default
 title: Topic
 ---
+[Home](index.html) | [Topic](topic.html) | [Methodology](methodology.html) | [RDF Triples](rdf.html) | [SPARQL](sparql.html) | [Gaps](gaps.html) | [LLM Prompts](prompts.html) | [Challenges](challenges.html) | [Conclusion](conclusion.html)
+---
 <img src="images/IMG_8089.jpeg" width="100%">
 
 # Mausoleum of Khoja Ahmed Yasawi
