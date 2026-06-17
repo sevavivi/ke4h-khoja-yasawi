@@ -2,7 +2,7 @@
 layout: default
 title: Methodology
 ---
-
+<img src="images/IMG_8087.jpeg" width="100%">
 # Methodology
 
 To achieve our goal, we developed a step-by-step methodology for exploring and enriching the Wikidata representation of the Mausoleum of Khoja Ahmed Yasawi.
