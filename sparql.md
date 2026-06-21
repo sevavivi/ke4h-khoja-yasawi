@@ -1,16 +1,13 @@
 ---
 layout: null
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>SPARQL | Mausoleum of Khoja Ahmet Yassawi</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-
 <style>
 :root{--dark:#170f0a;--brown:#4a2d17;--cream:#f8edd8;--light:#fffaf0;--gold:#d4af37;--blue:#0f4c81;--text:#2c2c2c}
 *{box-sizing:border-box}
@@ -32,9 +29,7 @@ footer{background:var(--dark);color:white;text-align:center;padding:35px;border-
 @media(max-width:760px){nav{position:static}nav a{display:inline-block;margin:5px 7px}h1{font-size:44px}section{padding:28px}}
 </style>
 </head>
-
 <body>
-
 <nav>
 <a href="index.html">Home</a>
 <a href="topic.html">Topic</a>
@@ -46,35 +41,28 @@ footer{background:var(--dark);color:white;text-align:center;padding:35px;border-
 <a href="challenges.html">Challenges</a>
 <a href="conclusion.html">Conclusion</a>
 </nav>
-
 <header>
 <div>
 <h1>SPARQL Queries</h1>
 <p>Exploring the Wikidata representation of the mausoleum</p>
 </div>
 </header>
-
 <main>
-
 <section>
 <h2>SPARQL Investigation</h2>
 <p>
 This section presents the SPARQL queries used to investigate the Wikidata representation of the Mausoleum of Khoja Ahmet Yassawi and identify missing information.
 </p>
 </section>
-
 <section>
 <h2>Query 1 — Basic Information</h2>
 <h3>Purpose</h3>
 <p>Retrieve the basic properties associated with the Mausoleum of Khoja Ahmet Yassawi.</p>
-
 <pre>SELECT ?propertyLabel ?valueLabel
 WHERE {
   wd:Q46069 ?p ?value .
   ?property wikibase:directClaim ?p .
-
   FILTER(?property != wd:P18)
-
   SERVICE wikibase:label {
     bd:serviceParam wikibase:language "en".
     ?property rdfs:label ?propertyLabel .
@@ -82,23 +70,19 @@ WHERE {
   }
 }
 LIMIT 20</pre>
-
 <div class="card">
 <strong>Result:</strong> The query returned information such as country, location, architectural style, material, UNESCO World Heritage status, and historical identifiers.
 </div>
 <img src="images/query1-result.png" alt="Query 1 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
-
 <section>
 <h2>Query 2 — Ordered Properties</h2>
 <h3>Purpose</h3>
 <p>Retrieve a clearer ordered list of properties and values from Wikidata.</p>
-
 <pre>SELECT ?propertyLabel ?valueLabel
 WHERE {
   wd:Q46069 ?p ?value .
   ?property wikibase:directClaim ?p .
-
   SERVICE wikibase:label {
     bd:serviceParam wikibase:language "en".
     ?property rdfs:label ?propertyLabel .
@@ -107,40 +91,32 @@ WHERE {
 }
 ORDER BY ?propertyLabel
 LIMIT 15</pre>
-
 <div class="card">
 <strong>Result:</strong> The query showed structured data such as Commons category, World Heritage Site ID, World Heritage criteria, Wikikids ID, and other external identifiers.
 </div>
 <img src="images/query2-result.png" alt="Query 2 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
-
 <section>
 <h2>Query 3 — Architect Information</h2>
 <h3>Purpose</h3>
 <p>Check whether Wikidata contains an architect relation for the mausoleum.</p>
-
 <pre>SELECT ?itemLabel ?architectLabel
 WHERE {
   VALUES ?item { wd:Q46069 }
-
   OPTIONAL { ?item wdt:P84 ?architect . }
-
   SERVICE wikibase:label {
     bd:serviceParam wikibase:language "en".
   }
 }</pre>
-
 <div class="card">
 <strong>Result:</strong> The query returned the mausoleum, but the architect field was empty. This shows that the architect information is not clearly represented.
 </div>
 <img src="images/query3-result.png" alt="Query 3 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
-
 <section>
 <h2>Query 4 — Heritage Designation</h2>
 <h3>Purpose</h3>
 <p>Identify the heritage designation connected to the mausoleum.</p>
-
 <pre>SELECT DISTINCT ?heritageLabel
 WHERE {
   wd:Q46069 wdt:P1435 ?heritage .
@@ -149,23 +125,19 @@ WHERE {
     ?heritage rdfs:label ?heritageLabel .
   }
 }</pre>
-
 <div class="card">
 <strong>Result:</strong> The query returned World Heritage Site and Q4343708, confirming that Wikidata represents the monument as a heritage site.
 </div>
 <img src="images/query4-result.png" alt="Query 4 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
-
 <section>
 <h2>Query 5 — Extended Properties</h2>
 <h3>Purpose</h3>
 <p>Retrieve a broader set of properties to identify what is present and what is missing.</p>
-
 <pre>SELECT ?propertyLabel ?valueLabel
 WHERE {
   wd:Q46069 ?p ?value .
   ?property wikibase:directClaim ?p .
-
   SERVICE wikibase:label {
     bd:serviceParam wikibase:language "en".
     ?property rdfs:label ?propertyLabel .
@@ -173,13 +145,67 @@ WHERE {
   }
 }
 LIMIT 50</pre>
-
 <div class="card">
 <strong>Result:</strong> The query returned 32 results, including country, image, instance of, commissioned by Timur, location, architectural style, material, coordinates, heritage designation, and World Heritage criteria.
 </div>
 <img src="images/query5-result.png" alt="Query 5 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
 </section>
-
+<section>
+<h2>Query 6 — REGEX</h2>
+<h3>Purpose</h3>
+<p>
+Query 6 demonstrates the use of REGEX. We used regular expressions to search for specific keywords within property labels. This allowed us to focus on heritage- and architecture-related information without manually inspecting all available properties.
+</p>
+<pre>SELECT ?propertyLabel ?valueLabel
+WHERE {
+  wd:Q46069 ?p ?value .
+  ?property wikibase:directClaim ?p .
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+    ?property rdfs:label ?propertyLabel .
+    ?value rdfs:label ?valueLabel .
+  }
+  FILTER(
+    REGEX(?propertyLabel, "heritage|architecture|architectural", "i")
+  )
+}</pre>
+<div class="card">
+<strong>Result:</strong> The query successfully identified architectural style, heritage designation and UNESCO World Heritage criteria, confirming the cultural significance of the monument.
+</div>
+<img src="images/query 6.jpeg" alt="Query 6 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
+</section>
+<section>
+<h2>Query 7 — UNION</h2>
+<h3>Purpose</h3>
+<p>
+Query 7 demonstrates the use of UNION. We used the UNION operator to combine multiple patterns into a single query. This allowed us to retrieve geographical and heritage-related information simultaneously without creating separate queries.
+</p>
+<pre>SELECT ?relation ?valueLabel
+WHERE {
+  {
+    wd:Q46069 wdt:P17 ?value .
+    BIND("Country" AS ?relation)
+  }
+  UNION
+  {
+    wd:Q46069 wdt:P131 ?value .
+    BIND("Region" AS ?relation)
+  }
+  UNION
+  {
+    wd:Q46069 wdt:P1435 ?value .
+    BIND("Heritage Status" AS ?relation)
+  }
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en".
+    ?value rdfs:label ?valueLabel .
+  }
+}</pre>
+<div class="card">
+<strong>Result:</strong> The query successfully returned the country (Kazakhstan), the region (Turkistan Region), and the heritage designation (World Heritage Site), providing a concise overview of the monument's geographical and cultural context.
+</div>
+<img src="images/query 7.jpeg" alt="Query 7 Results" style="width:100%;margin-top:20px;border:1px solid #d4af37;">
+</section>
 <section>
 <h2>Summary</h2>
 <p>
@@ -189,12 +215,9 @@ The SPARQL investigation demonstrated that Wikidata provides useful historical, 
 However, important religious, spiritual, and pilgrimage-related aspects remain underrepresented. These findings motivated the RDF enrichment phase of the project.
 </p>
 </section>
-
 </main>
-
 <footer>
 Knowledge Engineering for the Humanities • University of Bologna • 2026
 </footer>
-
 </body>
 </html>
